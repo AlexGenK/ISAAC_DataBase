@@ -1,0 +1,467 @@
+<%= form_for(questionnaire) do |f| %>
+  <% if questionnaire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(questionnaire.errors.count, "error") %> prohibited this questionnaire from being saved:</h2>
+
+      <ul>
+      <% questionnaire.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fio %>
+    <%= f.text_area :fio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :school_number %>
+    <%= f.text_area :school_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :index %>
+    <%= f.number_field :index %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_area :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street %>
+    <%= f.text_area :street %>
+  </div>
+
+  <div class="field">
+    <%= f.label :building %>
+    <%= f.text_area :building %>
+  </div>
+
+  <div class="field">
+    <%= f.label :apartment %>
+    <%= f.text_area :apartment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %>
+    <%= f.text_area :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :filling_date %>
+    <%= f.date_select :filling_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :stay_duration %>
+    <%= f.number_field :stay_duration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :industrial_presence %>
+    <%= f.check_box :industrial_presence %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth_date %>
+    <%= f.date_select :birth_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sex %>
+    <%= f.text_area :sex %>
+  </div>
+
+  <div class="field">
+    <%= f.label :a_1 %>
+    <%= f.check_box :a_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :a_2 %>
+    <%= f.check_box :a_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :a_3 %>
+    <%= f.number_field :a_3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :a_4 %>
+    <%= f.number_field :a_4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :a_5 %>
+    <%= f.check_box :a_5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :a_6 %>
+    <%= f.check_box :a_6 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :a_7 %>
+    <%= f.check_box :a_7 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :a_8 %>
+    <%= f.check_box :a_8 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_1 %>
+    <%= f.check_box :b_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_2 %>
+    <%= f.check_box :b_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_3 %>
+    <%= f.check_box :b_3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_01 %>
+    <%= f.check_box :b_4_01 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_02 %>
+    <%= f.check_box :b_4_02 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_03 %>
+    <%= f.check_box :b_4_03 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_04 %>
+    <%= f.check_box :b_4_04 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_05 %>
+    <%= f.check_box :b_4_05 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_06 %>
+    <%= f.check_box :b_4_06 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_07 %>
+    <%= f.check_box :b_4_07 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_08 %>
+    <%= f.check_box :b_4_08 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_09 %>
+    <%= f.check_box :b_4_09 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_10 %>
+    <%= f.check_box :b_4_10 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_11 %>
+    <%= f.check_box :b_4_11 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_4_12 %>
+    <%= f.check_box :b_4_12 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_5 %>
+    <%= f.number_field :b_5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :b_6 %>
+    <%= f.check_box :b_6 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_1 %>
+    <%= f.check_box :c_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_2 %>
+    <%= f.check_box :c_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_3 %>
+    <%= f.check_box :c_3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_4 %>
+    <%= f.number_field :c_4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_5 %>
+    <%= f.check_box :c_5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_6 %>
+    <%= f.number_field :c_6 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :c_7 %>
+    <%= f.check_box :c_7 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_1 %>
+    <%= f.check_box :d_1_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_2 %>
+    <%= f.check_box :d_1_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_3 %>
+    <%= f.check_box :d_1_3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_4 %>
+    <%= f.check_box :d_1_4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_5 %>
+    <%= f.check_box :d_1_5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_6 %>
+    <%= f.check_box :d_1_6 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_7 %>
+    <%= f.check_box :d_1_7 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_8 %>
+    <%= f.check_box :d_1_8 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_9 %>
+    <%= f.check_box :d_1_9 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_10 %>
+    <%= f.check_box :d_1_10 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_11 %>
+    <%= f.check_box :d_1_11 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_12 %>
+    <%= f.check_box :d_1_12 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_13 %>
+    <%= f.check_box :d_1_13 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_14 %>
+    <%= f.check_box :d_1_14 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_15 %>
+    <%= f.check_box :d_1_15 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_16 %>
+    <%= f.check_box :d_1_16 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_17 %>
+    <%= f.check_box :d_1_17 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_18 %>
+    <%= f.check_box :d_1_18 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_19 %>
+    <%= f.check_box :d_1_19 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_20 %>
+    <%= f.check_box :d_1_20 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_20_description %>
+    <%= f.text_area :d_1_20_description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_1_0 %>
+    <%= f.check_box :d_1_0 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_1 %>
+    <%= f.check_box :d_2_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_2 %>
+    <%= f.check_box :d_2_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_3 %>
+    <%= f.check_box :d_2_3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_4 %>
+    <%= f.check_box :d_2_4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_5 %>
+    <%= f.check_box :d_2_5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_6 %>
+    <%= f.check_box :d_2_6 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_7 %>
+    <%= f.check_box :d_2_7 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_8 %>
+    <%= f.check_box :d_2_8 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_9 %>
+    <%= f.check_box :d_2_9 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_10 %>
+    <%= f.check_box :d_2_10 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_11 %>
+    <%= f.check_box :d_2_11 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_12 %>
+    <%= f.check_box :d_2_12 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_13 %>
+    <%= f.check_box :d_2_13 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_14 %>
+    <%= f.check_box :d_2_14 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_15 %>
+    <%= f.check_box :d_2_15 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_16 %>
+    <%= f.check_box :d_2_16 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_17 %>
+    <%= f.check_box :d_2_17 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_18 %>
+    <%= f.check_box :d_2_18 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_19 %>
+    <%= f.check_box :d_2_19 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_20 %>
+    <%= f.check_box :d_2_20 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_2_0 %>
+    <%= f.check_box :d_2_0 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :d_3 %>
+    <%= f.text_area :d_3 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
