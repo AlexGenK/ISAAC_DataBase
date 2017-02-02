@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201190552) do
+ActiveRecord::Schema.define(version: 20170202043007) do
 
   create_table "questionnaires", force: :cascade do |t|
     t.text     "fio"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20170201190552) do
     t.text     "sex"
     t.boolean  "a_1"
     t.boolean  "a_2"
-    t.integer  "a_3"
-    t.integer  "a_4"
+    t.integer  "a_3",                 default: 0
+    t.integer  "a_4",                 default: 0
     t.boolean  "a_5"
     t.boolean  "a_6"
     t.boolean  "a_7"
@@ -50,14 +50,14 @@ ActiveRecord::Schema.define(version: 20170201190552) do
     t.boolean  "b_4_10"
     t.boolean  "b_4_11"
     t.boolean  "b_4_12"
-    t.integer  "b_5"
+    t.integer  "b_5",                 default: 0
     t.boolean  "b_6"
     t.boolean  "c_1"
     t.boolean  "c_2"
     t.boolean  "c_3"
-    t.integer  "c_4"
+    t.integer  "c_4",                 default: 0
     t.boolean  "c_5"
-    t.integer  "c_6"
+    t.integer  "c_6",                 default: 0
     t.boolean  "c_7"
     t.boolean  "d_1_1"
     t.boolean  "d_1_2"
@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(version: 20170201190552) do
     t.boolean  "d_2_20"
     t.boolean  "d_2_0"
     t.text     "d_3"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end
