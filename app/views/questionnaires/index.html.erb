@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Questionnaires</h1>
+<h1>Список введенных анкет</h1>
 
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>ФИО</th>
@@ -112,85 +112,85 @@
         <td><%= questionnaire.phone_number %></td>
         <td><%= questionnaire.filling_date %></td>
         <td><%= questionnaire.stay_duration %></td>
-        <td><%= questionnaire.industrial_presence %></td>
+        <td><span class="<%= questionnaire.industrial_presence ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
         <td><%= questionnaire.age %></td>
         <td><%= questionnaire.birth_date %></td>
         <td><%= questionnaire.sex %></td>
-        <td><%= questionnaire.a_1 %></td>
-        <td><%= questionnaire.a_2 %></td>
-        <td><%= questionnaire.a_3 %></td>
-        <td><%= questionnaire.a_4 %></td>
-        <td><%= questionnaire.a_5 %></td>
-        <td><%= questionnaire.a_6 %></td>
-        <td><%= questionnaire.a_7 %></td>
-        <td><%= questionnaire.a_8 %></td>
-        <td><%= questionnaire.b_1 %></td>
-        <td><%= questionnaire.b_2 %></td>
-        <td><%= questionnaire.b_3 %></td>
-        <td><%= questionnaire.b_4_01 %></td>
-        <td><%= questionnaire.b_4_02 %></td>
-        <td><%= questionnaire.b_4_03 %></td>
-        <td><%= questionnaire.b_4_04 %></td>
-        <td><%= questionnaire.b_4_05 %></td>
-        <td><%= questionnaire.b_4_06 %></td>
-        <td><%= questionnaire.b_4_07 %></td>
-        <td><%= questionnaire.b_4_08 %></td>
-        <td><%= questionnaire.b_4_09 %></td>
-        <td><%= questionnaire.b_4_10 %></td>
-        <td><%= questionnaire.b_4_11 %></td>
-        <td><%= questionnaire.b_4_12 %></td>
-        <td><%= questionnaire.b_5 %></td>
-        <td><%= questionnaire.b_6 %></td>
-        <td><%= questionnaire.c_1 %></td>
-        <td><%= questionnaire.c_2 %></td>
-        <td><%= questionnaire.c_3 %></td>
+        <td><span class="<%= questionnaire.a_1 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.a_2 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.a_3 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.a_4 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.a_5 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.a_6 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.a_7 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.a_8 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_1 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_2 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_3 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_01 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_02 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_03 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_04 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_05 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_06 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_07 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_08 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_09 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_10 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_11 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_4_12 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_5 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.b_6 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.c_1 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.c_2 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.c_3 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
         <td><%= questionnaire.c_4 %></td>
-        <td><%= questionnaire.c_5 %></td>
+        <td><span class="<%= questionnaire.c_5 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
         <td><%= questionnaire.c_6 %></td>
-        <td><%= questionnaire.c_7 %></td>
-        <td><%= questionnaire.d_1_1 %></td>
-        <td><%= questionnaire.d_1_2 %></td>
-        <td><%= questionnaire.d_1_3 %></td>
-        <td><%= questionnaire.d_1_4 %></td>
-        <td><%= questionnaire.d_1_5 %></td>
-        <td><%= questionnaire.d_1_6 %></td>
-        <td><%= questionnaire.d_1_7 %></td>
-        <td><%= questionnaire.d_1_8 %></td>
-        <td><%= questionnaire.d_1_9 %></td>
-        <td><%= questionnaire.d_1_10 %></td>
-        <td><%= questionnaire.d_1_11 %></td>
-        <td><%= questionnaire.d_1_12 %></td>
-        <td><%= questionnaire.d_1_13 %></td>
-        <td><%= questionnaire.d_1_14 %></td>
-        <td><%= questionnaire.d_1_15 %></td>
-        <td><%= questionnaire.d_1_16 %></td>
-        <td><%= questionnaire.d_1_17 %></td>
-        <td><%= questionnaire.d_1_18 %></td>
-        <td><%= questionnaire.d_1_19 %></td>
-        <td><%= questionnaire.d_1_20 %></td>
+        <td><span class="<%= questionnaire.c_7 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_1 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_2 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_3 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_4 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_5 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_6 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_7 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_8 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_9 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_10 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_11 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_12 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_13 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_14 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_15 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_16 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_17 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_18 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_19 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_1_20 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
         <td><%= questionnaire.d_1_20_description %></td>
-        <td><%= questionnaire.d_1_0 %></td>
-        <td><%= questionnaire.d_2_1 %></td>
-        <td><%= questionnaire.d_2_2 %></td>
-        <td><%= questionnaire.d_2_3 %></td>
-        <td><%= questionnaire.d_2_4 %></td>
-        <td><%= questionnaire.d_2_5 %></td>
-        <td><%= questionnaire.d_2_6 %></td>
-        <td><%= questionnaire.d_2_7 %></td>
-        <td><%= questionnaire.d_2_8 %></td>
-        <td><%= questionnaire.d_2_9 %></td>
-        <td><%= questionnaire.d_2_10 %></td>
-        <td><%= questionnaire.d_2_11 %></td>
-        <td><%= questionnaire.d_2_12 %></td>
-        <td><%= questionnaire.d_2_13 %></td>
-        <td><%= questionnaire.d_2_14 %></td>
-        <td><%= questionnaire.d_2_15 %></td>
-        <td><%= questionnaire.d_2_16 %></td>
-        <td><%= questionnaire.d_2_17 %></td>
-        <td><%= questionnaire.d_2_18 %></td>
-        <td><%= questionnaire.d_2_19 %></td>
-        <td><%= questionnaire.d_2_20 %></td>
-        <td><%= questionnaire.d_2_0 %></td>
+        <td><span class="<%= questionnaire.d_1_0 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_1 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_2 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_3 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_4 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_5 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_6 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_7 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_8 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_9 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_10 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_11 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_12 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_13 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_14 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_15 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_16 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_17 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_18 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_19 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_20 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
+        <td><span class="<%= questionnaire.d_2_0 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
         <td><%= questionnaire.d_3 %></td>
         <td><%= link_to 'Show', questionnaire %></td>
         <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %></td>
@@ -202,4 +202,4 @@
 
 <br>
 
-<%= link_to 'New Questionnaire', new_questionnaire_path %>
+<%= link_to 'Новая анкета', new_questionnaire_path %>
