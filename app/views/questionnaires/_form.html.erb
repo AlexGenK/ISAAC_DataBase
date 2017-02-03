@@ -1,4 +1,4 @@
-<%= form_for(questionnaire) do |f| %>
+<%= form_for(questionnaire, html: {class: "form-horizontal"}) do |f| %>
   <% if questionnaire.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(questionnaire.errors.count, "error") %> prohibited this questionnaire from being saved:</h2>
@@ -11,454 +11,579 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :fio, "ФИО ребенка" %>
-    <%= f.text_area :fio %>
+  <div class="panel panel-default">
+    <div class="panel-heading">Основной блок</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <%= f.label :fio, "ФИО ребенка", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :fio, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :school_number, "Номер школы", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :school_number, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :index, "Индекс", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.number_field :index, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :city, "Город", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :city, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :street, "Улица", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :street %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :building, "Дом", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :building %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :apartment, "Квартира", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :apartment %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :phone_number, "Номер телефона", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :phone_number %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :filling_date, "Дата заполнения", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.date_select :filling_date, add_month_numbers: true %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :stay_duration, "Длительность проживания", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.number_field :stay_duration %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :industrial_presence, "Наличие промышленных предприятий", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.check_box :industrial_presence %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :age, "Возраст ребенка", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.number_field :age %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :birth_date, "Дата рождения", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.date_select :birth_date, start_year: 2000, add_month_numbers: true  %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :sex, "Пол", class: "col-sm-2 control-label" %>
+        <div class="col-sm-10">
+          <%= f.select :sex, %w[М Ж] %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :school_number, "Номер школы" %>
-    <%= f.text_area :school_number %>
+  <div class="panel panel-default">
+    <div class="panel-heading">Блок А</div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <%= f.label :a_1, "A-1", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :a_1 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :a_2, "A-2", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :a_2 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :a_3, "A-3", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.select :a_3, %w[0 1 2 3 4] %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :a_4, "A-4", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.select :a_4, %w[0 1 2 3] %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :a_5, "A-5", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :a_5 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :a_6, "A-6", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :a_6 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :a_7, "A-7", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :a_7 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :a_8, "A-8", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :a_8 %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :index, "Индекс" %>
-    <%= f.number_field :index %>
+  <div class="panel panel-default">
+    <div class="panel-heading">Блок B</div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <%= f.label :b_1, "B-1", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_1 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_2, "B-2", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_2 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_3, "B-3", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_3 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_01, "B-4 январь", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_01 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_02, "B-4 февраль", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_02 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_03, "B-4 март", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_03 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_04, "B-4 апрель", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_04 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_05, "B-4 май", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_05 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_06, "B-4 июнь", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_06 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_07, "B-4 июль", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_07 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_08, "B-4 август", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_08 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_09, "B-4 сентябрь", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_09 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_10, "B-4 октябрь", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_10 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_11, "B-4 ноябрь", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_11 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_4_12, "B-4 декабрь", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_4_12 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_5, "B-5", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.select :b_5, %w[0 1 2 3 4] %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :b_6, "B-6", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :b_6 %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :city, "Город" %>
-    <%= f.text_area :city %>
+  <div class="panel panel-default">
+    <div class="panel-heading">Блок C</div>
+    <div class="panel-body">
+
+      <div class="form-group">
+        <%= f.label :c_1, "С-1", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :c_1 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :c_2, "С-2", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :c_2 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :c_3, "С-3", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :c_3 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :c_4, "С-4", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.select :c_4, %w[0 1 2 3] %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :c_5, "С-5", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :c_5 %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :c_6, "С-6", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.select :c_6, %w[0 1 2 3] %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :c_7, "С-7", class: "col-sm-2 control-label"  %>
+        <div class="col-sm-10">
+          <%= f.check_box :c_7 %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :street, "Улица" %>
-    <%= f.text_area :street %>
+  <div class="form-group">
+    <%= f.label :d_1_1, "D-1-1", class: "col-sm-2 control-label"  %>
+    <div class="col-sm-10">
+      <%= f.check_box :d_1_1 %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :building, "Дом" %>
-    <%= f.text_area :building %>
+  <div class="form-group">
+    <%= f.label :d_1_2, "D-1-2", class: "col-sm-2 control-label"  %>
+    <div class="col-sm-10">
+      <%= f.check_box :d_1_2 %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :apartment, "Квартира" %>
-    <%= f.text_area :apartment %>
+  <div class="form-group">
+    <%= f.label :d_1_3, "D-1-3", class: "col-sm-2 control-label"  %>
+    <div class="col-sm-10">
+      <%= f.check_box :d_1_3 %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :phone_number, "Номер телефона" %>
-    <%= f.text_area :phone_number %>
+  <div class="form-group">
+    <%= f.label :d_1_4, "D-1-4", class: "col-sm-2 control-label"  %>
+    <div class="col-sm-10">
+      <%= f.check_box :d_1_4 %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :filling_date, "Дата заполнения" %>
-    <%= f.date_select :filling_date, add_month_numbers: true %>
+  <div class="form-group">
+    <%= f.label :d_1_5, "D-1-5", class: "col-sm-2 control-label"  %>
+    <div class="col-sm-10">
+      <%= f.check_box :d_1_5 %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :stay_duration, "Длительность проживания" %>
-    <%= f.number_field :stay_duration %>
-  </div>
-
-  <div class="field">
-    <%= f.label :industrial_presence, "Наличие промышленных предприятий" %>
-    <%= f.check_box :industrial_presence %>
-  </div>
-
-  <div class="field">
-    <%= f.label :age, "Возраст ребенка" %>
-    <%= f.number_field :age %>
-  </div>
-
-  <div class="field">
-    <%= f.label :birth_date, "Дата рождения" %>
-    <%= f.date_select :birth_date, start_year: 2000, add_month_numbers: true  %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sex, "Пол" %>
-    <%= f.select :sex, %w[М Ж] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :a_1, "A-1" %>
-    <%= f.check_box :a_1 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :a_2, "A-2" %>
-    <%= f.check_box :a_2 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :a_3, "A-3" %>
-    <%= f.select :a_3, %w[0 1 2 3 4] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :a_4, "A-4" %>
-    <%= f.select :a_4, %w[0 1 2 3] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :a_5, "A-5" %>
-    <%= f.check_box :a_5 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :a_6, "A-6" %>
-    <%= f.check_box :a_6 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :a_7, "A-7" %>
-    <%= f.check_box :a_7 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :a_8, "A-8" %>
-    <%= f.check_box :a_8 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_1, "B-1" %>
-    <%= f.check_box :b_1 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_2, "B-2" %>
-    <%= f.check_box :b_2 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_3, "B-3" %>
-    <%= f.check_box :b_3 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_01, "B-4 январь" %>
-    <%= f.check_box :b_4_01 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_02, "B-4 февраль" %>
-    <%= f.check_box :b_4_02 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_03, "B-4 март" %>
-    <%= f.check_box :b_4_03 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_04, "B-4 апрель" %>
-    <%= f.check_box :b_4_04 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_05, "B-4 май" %>
-    <%= f.check_box :b_4_05 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_06, "B-4 июнь" %>
-    <%= f.check_box :b_4_06 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_07, "B-4 июль" %>
-    <%= f.check_box :b_4_07 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_08, "B-4 август" %>
-    <%= f.check_box :b_4_08 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_09, "B-4 сентябрь" %>
-    <%= f.check_box :b_4_09 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_10, "B-4 октябрь" %>
-    <%= f.check_box :b_4_10 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_11, "B-4 ноябрь" %>
-    <%= f.check_box :b_4_11 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_4_12, "B-4 декабрь" %>
-    <%= f.check_box :b_4_12 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_5, "B-5" %>
-    <%= f.select :b_5, %w[0 1 2 3 4] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :b_6, "B-5" %>
-    <%= f.check_box :b_6 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :c_1, "С-1" %>
-    <%= f.check_box :c_1 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :c_2, "С-2" %>
-    <%= f.check_box :c_2 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :c_3, "С-3" %>
-    <%= f.check_box :c_3 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :c_4, "С-4" %>
-    <%= f.select :c_4, %w[0 1 2 3] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :c_5, "С-5" %>
-    <%= f.check_box :c_5 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :c_6, "С-6" %>
-    <%= f.select :c_6, %w[0 1 2 3] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :c_7, "С-7" %>
-    <%= f.check_box :c_7 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :d_1_1, "D-1-1" %>
-    <%= f.check_box :d_1_1 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :d_1_2, "D-1-2" %>
-    <%= f.check_box :d_1_2 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :d_1_3, "D-1-3" %>
-    <%= f.check_box :d_1_3 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :d_1_4, "D-1-4" %>
-    <%= f.check_box :d_1_4 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :d_1_5, "D-1-5" %>
-    <%= f.check_box :d_1_5 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :d_1_6, "D-1-6" %>
+  <div class="form-group">
+    <%= f.label :d_1_6, "D-1-6", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_6 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_7, "D-1-7" %>
+  <div class="form-group">
+    <%= f.label :d_1_7, "D-1-7", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_7 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_8, "D-1-8" %>
+  <div class="form-group">
+    <%= f.label :d_1_8, "D-1-8", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_8 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_9, "D-1-9" %>
+  <div class="form-group">
+    <%= f.label :d_1_9, "D-1-9", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_9 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_10, "D-1-10" %>
+  <div class="form-group">
+    <%= f.label :d_1_10, "D-1-10", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_10 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_11, "D-1-11" %>
+  <div class="form-group">
+    <%= f.label :d_1_11, "D-1-11", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_11 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_12, "D-1-12" %>
+  <div class="form-group">
+    <%= f.label :d_1_12, "D-1-12", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_12 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_13, "D-1-13" %>
+  <div class="form-group">
+    <%= f.label :d_1_13, "D-1-13", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_13 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_14, "D-1-14" %>
+  <div class="form-group">
+    <%= f.label :d_1_14, "D-1-14", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_14 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_15, "D-1-15" %>
+  <div class="form-group">
+    <%= f.label :d_1_15, "D-1-15", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_15 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_16, "D-1-16" %>
+  <div class="form-group">
+    <%= f.label :d_1_16, "D-1-16", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_16 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_17, "D-1-17" %>
+  <div class="form-group">
+    <%= f.label :d_1_17, "D-1-17", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_17 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_18, "D-1-18" %>
+  <div class="form-group">
+    <%= f.label :d_1_18, "D-1-18", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_18 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_19, "D-1-19" %>
+  <div class="form-group">
+    <%= f.label :d_1_19, "D-1-19", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_19 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_20, "D-1-20" %>
+  <div class="form-group">
+    <%= f.label :d_1_20, "D-1-20", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_20 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_20_description, "D-1-20 описание" %>
-    <%= f.text_area :d_1_20_description %>
+  <div class="form-group">
+    <%= f.label :d_1_20_description, "D-1-20 описание", class: "col-sm-2 control-label"  %>
+    <%= f.text_field :d_1_20_description %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_1_0, "D-1-0" %>
+  <div class="form-group">
+    <%= f.label :d_1_0, "D-1-0", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_1_0 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_1, "D-2-1" %>
+  <div class="form-group">
+    <%= f.label :d_2_1, "D-2-1", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_1 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_2, "D-2-2" %>
+  <div class="form-group">
+    <%= f.label :d_2_2, "D-2-2", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_2 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_3, "D-2-3" %>
+  <div class="form-group">
+    <%= f.label :d_2_3, "D-2-3", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_3 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_4, "D-2-4" %>
+  <div class="form-group">
+    <%= f.label :d_2_4, "D-2-4", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_4 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_5, "D-2-5" %>
+  <div class="form-group">
+    <%= f.label :d_2_5, "D-2-5", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_5 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_6, "D-2-6" %>
+  <div class="form-group">
+    <%= f.label :d_2_6, "D-2-6", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_6 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_7, "D-2-7" %>
+  <div class="form-group">
+    <%= f.label :d_2_7, "D-2-7", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_7 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_8, "D-2-8" %>
+  <div class="form-group">
+    <%= f.label :d_2_8, "D-2-8", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_8 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_9, "D-2-9" %>
+  <div class="form-group">
+    <%= f.label :d_2_9, "D-2-9", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_9 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_10, "D-2-10" %>
+  <div class="form-group">
+    <%= f.label :d_2_10, "D-2-10", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_10 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_11, "D-2-11" %>
+  <div class="form-group">
+    <%= f.label :d_2_11, "D-2-11", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_11 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_12, "D-2-12" %>
+  <div class="form-group">
+    <%= f.label :d_2_12, "D-2-12", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_12 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_13, "D-2-13" %>
+  <div class="form-group">
+    <%= f.label :d_2_13, "D-2-13", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_13 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_14, "D-2-14" %>
+  <div class="form-group">
+    <%= f.label :d_2_14, "D-2-14", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_14 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_15, "D-2-15" %>
+  <div class="form-group">
+    <%= f.label :d_2_15, "D-2-15", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_15 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_16, "D-2-16" %>
+  <div class="form-group">
+    <%= f.label :d_2_16, "D-2-16", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_16 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_17, "D-2-17" %>
+  <div class="form-group">
+    <%= f.label :d_2_17, "D-2-17", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_17 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_18, "D-2-18" %>
+  <div class="form-group">
+    <%= f.label :d_2_18, "D-2-18", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_18 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_19, "D-2-19" %>
+  <div class="form-group">
+    <%= f.label :d_2_19, "D-2-19", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_19 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_20, "D-2-20" %>
+  <div class="form-group">
+    <%= f.label :d_2_20, "D-2-20", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_20 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_2_0, "D-2-0" %>
+  <div class="form-group">
+    <%= f.label :d_2_0, "D-2-0", class: "col-sm-2 control-label"  %>
     <%= f.check_box :d_2_0 %>
   </div>
 
-  <div class="field">
-    <%= f.label :d_3, "D-3" %>
-    <%= f.text_area :d_3 %>
+  <div class="form-group">
+    <%= f.label :d_3, "D-3", class: "col-sm-2 control-label"  %>
+    <%= f.text_field :d_3 %>
   </div>
 
   <div class="actions">
