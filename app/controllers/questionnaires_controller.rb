@@ -5,6 +5,7 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires.json
   def index
     @questionnaires = Questionnaire.all.order(:fio)
+    @count = @questionnaires.count
   end
 
   # GET /questionnaires/1
