@@ -1,3 +1,4 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -450,5 +451,7 @@
   <%= @questionnaire.d_3 %>
 </p>
 
-<%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
-<%= link_to 'Back', questionnaires_path %>
+<%= link_to 'Редактировать', edit_questionnaire_path(@questionnaire) %> |
+<%= link_to 'К списку', questionnaires_path %> |
+<%= link_to 'Создать новую анкету', new_questionnaire_path %>
+</div>

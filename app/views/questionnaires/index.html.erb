@@ -192,9 +192,9 @@
         <td><span class="<%= questionnaire.d_2_20 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
         <td><span class="<%= questionnaire.d_2_0 ? 'glyphicon glyphicon-ok' : ''%>"></span></td>
         <td><%= questionnaire.d_3 %></td>
-        <td><%= link_to 'Show', questionnaire %></td>
-        <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %></td>
-        <td><%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', questionnaire %>
+        <%= link_to 'Edit', edit_questionnaire_path(questionnaire) %>
+        <%= link_to 'Destroy', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -202,4 +202,4 @@
 
 <br>
 
-<%= link_to 'Новая анкета', new_questionnaire_path %>
+<%= link_to 'Создать новую анкету', new_questionnaire_path %>
