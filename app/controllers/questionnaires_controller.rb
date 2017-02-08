@@ -4,7 +4,12 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires
   # GET /questionnaires.json
   def index
-    @questionnaires = Questionnaire.all.order(:fio)
+    params[:search]='' if params[:commit]=='Показать все'
+    if params[:search]==''
+      @questionnaires = Questionnaire.all.order(:fio)
+    else
+      @questionnaires = Questionnaire.where('fio LIKE ?', "%#{params[:search]}%").order(:fio)
+    end
     @count = @questionnaires.count
   end
 

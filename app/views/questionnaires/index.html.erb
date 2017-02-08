@@ -1,6 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Список введенных анкет (<%= @count %> шт.)</h1>
+<div class='col-sm-12'>
+  <h1>Список введенных анкет (<%= @count %> шт.)</h1>
+</div>
+
+<%= form_tag(questionnaires_path, :method => "get", id: "search-form") do %>
+  <div class='col-sm-12 col-md-6'>
+    <div class='input-group'>
+      <%= text_field_tag :search, params[:search], placeholder: "ФИО", class: "form-control" %>
+      <span class='input-group-btn'>
+        <%= submit_tag "Найти", class: "btn btn-default" %>
+        <%= submit_tag "Показать все", class: "btn btn-default" %>
+      </span>
+    </div>
+  </div>
+<% end %>
+
+<div class='col-sm-12'>
+  <br>
+</div>
 
 <table class="table table-striped table-bordered">
   <thead>
@@ -200,6 +218,6 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Создать новую анкету', new_questionnaire_path %>
+<div class='col-sm-12'>
+  <%= link_to 'Создать новую анкету', new_questionnaire_path %>
+</div>
