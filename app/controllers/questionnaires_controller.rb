@@ -1,5 +1,6 @@
 class QuestionnairesController < ApplicationController
   before_action :set_questionnaire, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index]
 
   # GET /questionnaires
   # GET /questionnaires.json
