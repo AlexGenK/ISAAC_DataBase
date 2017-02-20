@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211143028) do
+ActiveRecord::Schema.define(version: 20170220182514) do
 
   create_table "questionnaires", force: :cascade do |t|
     t.text     "fio"
@@ -103,9 +103,49 @@ ActiveRecord::Schema.define(version: 20170211143028) do
     t.boolean  "d_2_20"
     t.boolean  "d_2_0"
     t.text     "d_3"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.text     "user"
+    t.integer  "dop_1",               default: 1
+    t.boolean  "dop_2_1",             default: false
+    t.boolean  "dop_2_2",             default: false
+    t.boolean  "dop_2_3",             default: false
+    t.boolean  "dop_2_4",             default: false
+    t.boolean  "dop_2_5",             default: false
+    t.boolean  "dop_2_6",             default: false
+    t.integer  "dop_3",               default: 3
+    t.integer  "dop_4",               default: 2
+    t.integer  "dop_5",               default: 3
+    t.boolean  "dop_6_1",             default: false
+    t.boolean  "dop_6_2",             default: false
+    t.boolean  "dop_6_3",             default: false
+    t.boolean  "dop_6_4",             default: false
+    t.boolean  "dop_6_5",             default: false
+    t.boolean  "dop_7_1",             default: false
+    t.boolean  "dop_7_2",             default: false
+    t.boolean  "dop_7_3",             default: false
+    t.boolean  "dop_7_4",             default: false
+    t.boolean  "dop_7_5",             default: false
+    t.boolean  "dop_8_1",             default: false
+    t.boolean  "dop_8_2",             default: false
+    t.boolean  "dop_8_3",             default: false
+    t.boolean  "dop_8_4",             default: false
+    t.boolean  "dop_8_5",             default: false
+    t.boolean  "dop_9_1",             default: false
+    t.boolean  "dop_9_2",             default: false
+    t.boolean  "dop_9_3",             default: false
+    t.boolean  "dop_9_4",             default: false
+    t.boolean  "dop_10_1",            default: false
+    t.boolean  "dop_10_2",            default: false
+    t.boolean  "dop_10_3",            default: false
+    t.boolean  "dop_10_4",            default: false
+    t.boolean  "dop_10_5",            default: false
+    t.boolean  "dop_10_6",            default: false
+    t.integer  "dop_11",              default: 1
+    t.integer  "dop_12",              default: 1
+    t.integer  "dop_13",              default: 0
+    t.integer  "dop_14",              default: 0
+    t.integer  "dop_15",              default: 1
   end
 
   create_table "users", force: :cascade do |t|
