@@ -1,12 +1,12 @@
 class QuestionnairesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_questionnaire, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_user_email
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_questionnaires
 
   # GET /questionnaires
   # GET /questionnaires.json
   def index
-    @current_user_email=current_user.email
     params[:search]='' if params[:commit]=='Показать все'
     @questionnaires = Questionnaire.where('fio LIKE ? AND user LIKE ?', "%#{params[:search]}%", @current_user_email).order(:fio)
     @count = @questionnaires.count
@@ -15,7 +15,7 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires/1
   # GET /questionnaires/1.json
   def show
-    invalid_questionnaires if @questionnaire.user != current_user.email
+    invalid_questionnaires if @questionnaire.user != @current_user_email
   end
 
   # GET /questionnaires/new
@@ -31,7 +31,7 @@ class QuestionnairesController < ApplicationController
   # POST /questionnaires.json
   def create
     @questionnaire = Questionnaire.new(questionnaire_params)
-    @questionnaire.user = current_user.email
+    @questionnaire.user = @current_user_email
 
     respond_to do |format|
       if @questionnaire.save
@@ -72,6 +72,10 @@ class QuestionnairesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_questionnaire
       @questionnaire = Questionnaire.find(params[:id])
+    end
+
+    def set_current_user_email
+      @current_user_email=current_user.email
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
