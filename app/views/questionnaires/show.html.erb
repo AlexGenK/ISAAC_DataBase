@@ -1,5 +1,8 @@
 <div class="container">
 
+<%= render "questionnaire_menu" %>
+<br>
+<br>
 <p>
   <strong>Fio:</strong>
   <%= @questionnaire.fio %>
@@ -449,8 +452,7 @@
   <strong>D 3:</strong>
   <%= @questionnaire.d_3 %>
 </p>
+<br>
+<%= render "questionnaire_menu" %>
 
-<%= link_to 'Редактировать', edit_questionnaire_path(@questionnaire) %> |
-<%= link_to 'К списку', questionnaires_path %> |
-<%= link_to 'Создать новую анкету', new_questionnaire_path %>
 </div>
