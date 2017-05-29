@@ -1,24 +1,12 @@
-# README
+# ЗАПОЛНЕНИЕ ОПРОСНИКОВ ПО ПРОГРАММЕ ISAAC
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Программа для заполнения, хранения и обработки опросников в соответствии с
+международной программой "ISAAC" по изучению здоровья детей и подростков.
 
-Things you may want to cover:
+Использованы:
 
-* Ruby version
+* Язык Ruby 2.3.1
 
-* System dependencies
+* Фреймворк Rails 5.0.1
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* БД SQLite
