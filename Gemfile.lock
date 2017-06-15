@@ -41,7 +41,7 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (6.7.2)
       execjs
-    bcrypt (3.1.11)
+    bcrypt (3.1.11-x64-mingw32)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -155,6 +155,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    will_paginate (3.1.6)
 
 PLATFORMS
   x64-mingw32
@@ -174,6 +175,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  will_paginate (~> 3.1.0)
 
 BUNDLED WITH
    1.13.6
