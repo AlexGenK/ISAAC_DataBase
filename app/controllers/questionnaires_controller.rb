@@ -8,7 +8,7 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires.json
   def index
     params[:search]='' if params[:commit]=='Показать все'
-    @questionnaires = Questionnaire.where('fio LIKE ? AND user LIKE ?', "%#{params[:search]}%", @current_user_email).order(:fio).paginate(:page => params[:page], :per_page => 5)
+    @questionnaires = Questionnaire.where('fio LIKE ? AND user LIKE ?', "%#{params[:search]}%", @current_user_email).order(:fio).paginate(:page => params[:page], :per_page => 15)
     @count = @questionnaires.count
   end
 
@@ -32,7 +32,7 @@ class QuestionnairesController < ApplicationController
   def create
     @questionnaire = Questionnaire.new(questionnaire_params)
     @questionnaire.user = @current_user_email
-    # flash[:alert] = "----------> #{@questionnaire.is_name_unique} <-----------"
+    # flash[:alert] = "----------> #{@questionnaire.is_name_unique?} <-----------"
 
     respond_to do |format|
       if @questionnaire.save
