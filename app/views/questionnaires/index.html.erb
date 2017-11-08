@@ -28,7 +28,7 @@
       <th>ФИО</th>
       <th>Номер школы</th>
       <th>Индекс</th>
-      <th>Город</th>
+      <th>Населенный пункт</th>
       <th>Улица</th>
       <th>Дом</th>
       <th>Квартира</th>
@@ -162,7 +162,7 @@
     <% @questionnaires.each do |questionnaire| %>
       <tr>
         <td>
-        <%= link_to questionnaire.fio, edit_questionnaire_path(questionnaire) %>
+        <%= link_to questionnaire.fio=='' ? '???????' : questionnaire.fio, edit_questionnaire_path(questionnaire) %>
         <%= button_to 'Удалить', questionnaire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= questionnaire.school_number %></td>
         <td><%= questionnaire.index %></td>
