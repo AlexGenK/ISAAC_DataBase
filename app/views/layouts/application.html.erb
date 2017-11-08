@@ -10,18 +10,20 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <p class="notice">Пользователь: <%= @current_user_email %> | 
-      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %> |
-      </p>
-    <% else %>
-    <% end %>
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <div class="container-fluid">
+      <% if user_signed_in? %>
+        <p class="notice">Пользователь: <%= @current_user_email %> | 
+        <%= link_to 'Выйти', destroy_user_session_path, method: :delete %> |
+        </p>
+      <% else %>
+      <% end %>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
