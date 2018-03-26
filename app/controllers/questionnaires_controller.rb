@@ -8,6 +8,7 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires.json
   def index
     params[:search]='' if params[:commit]=='Показать все'
+    params[:search].strip! if params[:search]
     @questionnaires = Questionnaire.where('fio LIKE ? AND user LIKE ?', "%#{params[:search]}%", @current_user_email).order(:fio).paginate(:page => params[:page], :per_page => 15)
     @count = @questionnaires.count
   end
